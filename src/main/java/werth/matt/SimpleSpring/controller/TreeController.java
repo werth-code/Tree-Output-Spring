@@ -1,9 +1,8 @@
 package werth.matt.SimpleSpring.controller;
 
+import org.springframework.web.bind.annotation.*;
 import werth.matt.SimpleSpring.model.Tree;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 import werth.matt.SimpleSpring.service.TreeService;
 
 import java.util.List;
@@ -22,6 +21,26 @@ public class TreeController {
     @GetMapping("/trees")
     public List<Tree> getTrees() {
         return treeService.getTrees();
+    }
+
+    @GetMapping("/trees/{id}")
+    public Tree getTreeByID(@PathVariable String id) {
+        return treeService.getTreeByID(id);
+    }
+
+    @PostMapping("/trees")
+    public void addTree(@RequestBody Tree tree) {
+        treeService.addTree(tree);
+    }
+
+    @PutMapping("/trees/{id}")
+    public void updateTree(@RequestBody Tree tree, @PathVariable String id) {
+        treeService.updateTree(id, tree);
+    }
+
+    @DeleteMapping("/trees/{id}")
+    public void deleteTree(@PathVariable String id) {
+        treeService.removeTree(id);
     }
 
 }
