@@ -1,25 +1,30 @@
 package werth.matt.SimpleSpring.model;
 
+import java.time.LocalDate;
 import java.util.UUID;
+
+
+
+//// TODO: 2/7/21 We may want to make this an abstract class and have tree types extend.
 
 public class Tree {
     private String id;
     private String location;
     private TreeType treeType;
-    private Integer treeAge;
+    private LocalDate datePlanted;
     private Boolean requiresCrossPollination;
-
+    // private Integer rangeOfCrossPollinator;
     // private Integer productionAge;
-    // private Boolean inRangeOfCrossPollinator;
+    // private Double initialCost;
     // private Double costPerPound;
 
     public Tree(){};
 
-    public Tree(String location, TreeType treeType, Integer treeAge, Boolean requiresPollination) {
+    public Tree(String location, TreeType treeType, LocalDate datePlanted, Boolean requiresPollination) {
         this.id = UUID.randomUUID().toString();
         this.location = location;
         this.treeType = treeType;
-        this.treeAge = treeAge;
+        this.datePlanted = datePlanted;
         this.requiresCrossPollination = requiresPollination;
     }
 
@@ -47,12 +52,12 @@ public class Tree {
         this.treeType = treeType;
     }
 
-    public Integer getTreeAge() {
-        return treeAge;
+    public LocalDate getDatePlanted() {
+        return datePlanted;
     }
 
-    public void setTreeAge(Integer treeAge) {
-        this.treeAge = treeAge;
+    public void setDatePlanted(LocalDate datePlanted) {
+        this.datePlanted = datePlanted;
     }
 
     public Boolean getRequiresCrossPollination() {

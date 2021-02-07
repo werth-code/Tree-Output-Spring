@@ -13,8 +13,7 @@ package werth.matt.SimpleSpring.model.interfaces;
 
 import werth.matt.SimpleSpring.model.Tree;
 
-public interface AppleTreeProduction {
+public interface FruitTreeProduction {
     Integer fruitYield(Tree tree); // this needs to return in pounds fruit production
-    Boolean crossPollinated(Tree tree); // this needs to look at trees in the surrounding area to find if a cross pollinating type is within range.
     Double costPerPound(Tree tree); // total cost per pound of apples.
 }

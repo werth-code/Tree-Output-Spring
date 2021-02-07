@@ -4,6 +4,7 @@ import werth.matt.SimpleSpring.model.Tree;
 import werth.matt.SimpleSpring.model.TreeType;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,9 +12,12 @@ import java.util.List;
 @Service
 public class TreeService {
 
+
+   LocalDate localDate = LocalDate.of(2015, 3, 2);
+
     public List<Tree> trees = new ArrayList<>(Arrays.asList(
-            new Tree("28.22223.221", TreeType.APPLE, 1, false),
-            new Tree("24.12123.121", TreeType.APPLE, 1, false)
+            new Tree("28.22223.221", TreeType.APPLE, LocalDate.of(2015, 3, 2), false),
+            new Tree("24.12123.121", TreeType.APPLE, LocalDate.of(2015, 3, 2), false)
     ));
 
     public List<Tree> getTrees() {
