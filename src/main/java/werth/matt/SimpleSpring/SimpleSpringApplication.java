@@ -11,3 +11,7 @@ public class SimpleSpringApplication {
 	}
 
 }
+
+//// TODO: 2/6/21  The goal is to get all of the output information that we can about each tree type.
+
+// // TODO: 2/6/21 1. Tree growth rate   2. Age that it first produces    3. What it produces   4. How much it produces
