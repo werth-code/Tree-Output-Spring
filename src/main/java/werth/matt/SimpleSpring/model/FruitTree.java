@@ -25,3 +25,16 @@ public class FruitTree extends Tree implements FruitTreeProduction {
 
 
 }
+
+//    private String id;
+//    private String location;
+//    private TreeType treeType;
+//    private LocalDate datePlanted;
+//    private Boolean requiresCrossPollination;
+//    private Double yearlyMaintenanceCost;
+//    private TreeHealth treeHealth;
+
+//    // private Integer rangeOfCrossPollinator;
+//    // private Integer productionAge;
+//    // private Double initialCost;
+//    // private Double costPerPound;

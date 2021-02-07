@@ -15,5 +15,11 @@ import werth.matt.SimpleSpring.model.Tree;
 
 public interface FruitTreeProduction {
     Integer fruitYield(Tree tree); // this needs to return in pounds fruit production
+    //// TODO: 2/7/21 variables
+    // type of tree (Apple 350-600 pps)
+    // zone of tree (ideal 4-7)
+    // health of tree (healthy-dead)
+    // Of Bearing Age (true)
+    // Pests (false, level 0)
     Double costPerPound(Tree tree); // total cost per pound of apples.
 }

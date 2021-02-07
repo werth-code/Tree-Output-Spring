@@ -1,6 +1,7 @@
 package werth.matt.SimpleSpring.model;
 
 import werth.matt.SimpleSpring.model.weather.TreeHealth;
+import werth.matt.SimpleSpring.model.zones.PlantingZone;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -11,6 +12,7 @@ import java.util.UUID;
 public class Tree {
     private String id;
     private String location;
+    private PlantingZone plantingZone; // auto look-up based on gps location of tree.
     private TreeType treeType;
     private LocalDate datePlanted;
     private Boolean requiresCrossPollination;
@@ -86,6 +88,14 @@ public class Tree {
 
     public void setTreeHealth(TreeHealth treeHealth) {
         this.treeHealth = treeHealth;
+    }
+
+    public PlantingZone getPlantingZone() {
+        return plantingZone;
+    }
+
+    public void setPlantingZone(PlantingZone plantingZone) {
+        this.plantingZone = plantingZone;
     }
 
     @Override
