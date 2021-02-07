@@ -7,12 +7,20 @@ public class Tree {
     private String location;
     private TreeType treeType;
     private Integer treeAge;
+    private Boolean requiresCrossPollination;
 
-    public Tree(String location, TreeType treeType, Integer treeAge) {
+    // private Integer productionAge;
+    // private Boolean inRangeOfCrossPollinator;
+    // private Double costPerPound;
+
+    public Tree(){};
+
+    public Tree(String location, TreeType treeType, Integer treeAge, Boolean requiresPollination) {
         this.id = UUID.randomUUID().toString();
         this.location = location;
         this.treeType = treeType;
         this.treeAge = treeAge;
+        this.requiresCrossPollination = requiresPollination;
     }
 
     public String getId() {
@@ -45,6 +53,14 @@ public class Tree {
 
     public void setTreeAge(Integer treeAge) {
         this.treeAge = treeAge;
+    }
+
+    public Boolean getRequiresCrossPollination() {
+        return requiresCrossPollination;
+    }
+
+    public void setRequiresCrossPollination(Boolean requiresCrossPollination) {
+        this.requiresCrossPollination = requiresCrossPollination;
     }
 
     @Override

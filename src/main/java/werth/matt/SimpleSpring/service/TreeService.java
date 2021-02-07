@@ -12,8 +12,8 @@ import java.util.List;
 public class TreeService {
 
     public List<Tree> trees = new ArrayList<>(Arrays.asList(
-            new Tree("28.22223.221", TreeType.APPLE, 1),
-            new Tree("24.12123.121", TreeType.APPLE, 1)
+            new Tree("28.22223.221", TreeType.APPLE, 1, false),
+            new Tree("24.12123.121", TreeType.APPLE, 1, false)
     ));
 
     public List<Tree> getTrees() {
