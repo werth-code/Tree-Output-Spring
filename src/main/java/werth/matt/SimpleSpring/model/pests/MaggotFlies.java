@@ -1,4 +1,4 @@
 package werth.matt.SimpleSpring.model.pests;
 
-public class AppleMaggotFlies {
+public class MaggotFlies {
 }
