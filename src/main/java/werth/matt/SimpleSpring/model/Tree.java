@@ -1,5 +1,7 @@
 package werth.matt.SimpleSpring.model;
 
+import werth.matt.SimpleSpring.model.weather.TreeHealth;
+
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -13,6 +15,7 @@ public class Tree {
     private LocalDate datePlanted;
     private Boolean requiresCrossPollination;
     private Double yearlyMaintenanceCost;
+    private TreeHealth treeHealth; //https://stackoverflow.com/questions/17933493/java-limit-number-between-min-and-max - // TODO: 2/7/21 constrain to range 0-100?
     // private Integer rangeOfCrossPollinator;
     // private Integer productionAge;
     // private Double initialCost;
@@ -26,6 +29,7 @@ public class Tree {
         this.treeType = treeType;
         this.datePlanted = datePlanted;
         this.requiresCrossPollination = requiresPollination;
+        this.treeHealth = TreeHealth.HEALTHY;
     }
 
     public String getId() {
@@ -74,6 +78,14 @@ public class Tree {
 
     public void setYearlyMaintenanceCost(Double yearlyMaintenanceCost) {
         this.yearlyMaintenanceCost = yearlyMaintenanceCost;
+    }
+
+    public TreeHealth getTreeHealth() {
+        return treeHealth;
+    }
+
+    public void setTreeHealth(TreeHealth treeHealth) {
+        this.treeHealth = treeHealth;
     }
 
     @Override
