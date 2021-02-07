@@ -1,13 +1,12 @@
-package service;
+package werth.matt.SimpleSpring.service;
 
-import model.Tree;
-import model.TreeType;
+import werth.matt.SimpleSpring.model.Tree;
+import werth.matt.SimpleSpring.model.TreeType;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class TreeService {

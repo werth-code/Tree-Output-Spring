@@ -1,11 +1,10 @@
-package controller;
+package werth.matt.SimpleSpring.controller;
 
-import com.sun.source.util.Trees;
-import model.Tree;
+import werth.matt.SimpleSpring.model.Tree;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import service.TreeService;
+import werth.matt.SimpleSpring.service.TreeService;
 
 import java.util.List;
 

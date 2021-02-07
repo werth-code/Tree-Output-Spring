@@ -1,4 +1,4 @@
-package model;
+package werth.matt.SimpleSpring.model;
 
 import java.util.UUID;
 
