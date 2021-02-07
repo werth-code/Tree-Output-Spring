@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 
-
 //// TODO: 2/7/21 We may want to make this an abstract class and have tree types extend.
 
 public class Tree {
@@ -13,6 +12,7 @@ public class Tree {
     private TreeType treeType;
     private LocalDate datePlanted;
     private Boolean requiresCrossPollination;
+    private Double yearlyMaintenanceCost;
     // private Integer rangeOfCrossPollinator;
     // private Integer productionAge;
     // private Double initialCost;
@@ -66,6 +66,14 @@ public class Tree {
 
     public void setRequiresCrossPollination(Boolean requiresCrossPollination) {
         this.requiresCrossPollination = requiresCrossPollination;
+    }
+
+    public Double getYearlyMaintenanceCost() {
+        return yearlyMaintenanceCost;
+    }
+
+    public void setYearlyMaintenanceCost(Double yearlyMaintenanceCost) {
+        this.yearlyMaintenanceCost = yearlyMaintenanceCost;
     }
 
     @Override

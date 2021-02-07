@@ -1,4 +1,10 @@
 package werth.matt.SimpleSpring.model.pests;
 
-public class CodlingMoth {
+import java.time.LocalDate;
+
+public class CodlingMoth extends Pest{
+
+    public CodlingMoth(Integer levelOfInfestation, LocalDate dateOfInfestation) {
+        super(levelOfInfestation, dateOfInfestation);
+    }
 }

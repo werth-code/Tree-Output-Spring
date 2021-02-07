@@ -1,5 +1,6 @@
 package werth.matt.SimpleSpring.service;
 
+import werth.matt.SimpleSpring.model.FruitTree;
 import werth.matt.SimpleSpring.model.Tree;
 import werth.matt.SimpleSpring.model.TreeType;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,8 @@ public class TreeService {
    LocalDate localDate = LocalDate.of(2015, 3, 2);
 
     public List<Tree> trees = new ArrayList<>(Arrays.asList(
-            new Tree("28.22223.221", TreeType.APPLE, LocalDate.of(2015, 3, 2), false),
-            new Tree("24.12123.121", TreeType.APPLE, LocalDate.of(2015, 3, 2), false)
+            new FruitTree("28.22223.221", TreeType.APPLE, LocalDate.of(2015, 3, 2), false),
+            new FruitTree("24.12123.121", TreeType.APPLE, LocalDate.of(2015, 3, 2), false)
     ));
 
     public List<Tree> getTrees() {

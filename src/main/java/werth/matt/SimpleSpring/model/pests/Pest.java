@@ -1,22 +1,16 @@
 package werth.matt.SimpleSpring.model.pests;
 
+import java.time.LocalDate;
+
 abstract public class Pest {
-    private PestType pestType;
     private Integer levelOfInfestation;
     private Double costOfTreatment;
     private Integer poundsOfDamage;
+    private LocalDate dateOfInfestation;
 
-    public Pest(PestType pestType, Integer levelOfInfestation) {
-        this.pestType = pestType;
+    public Pest(Integer levelOfInfestation, LocalDate dateOfInfestation) {
+        this.dateOfInfestation = dateOfInfestation;
         this.levelOfInfestation = levelOfInfestation;
-    }
-
-    public PestType getPestType() {
-        return pestType;
-    }
-
-    public void setPestType(PestType pestType) {
-        this.pestType = pestType;
     }
 
     public Integer getPoundsOfDamage() {

@@ -1,4 +1,10 @@
 package werth.matt.SimpleSpring.model.pests;
 
-public class PlumCurculio {
+import java.time.LocalDate;
+
+public class PlumCurculio extends Pest{
+
+    public PlumCurculio(Integer levelOfInfestation, LocalDate dateOfInfestation) {
+        super(levelOfInfestation, dateOfInfestation);
+    }
 }

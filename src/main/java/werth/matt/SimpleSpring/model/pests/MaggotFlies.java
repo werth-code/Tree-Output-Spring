@@ -1,4 +1,10 @@
 package werth.matt.SimpleSpring.model.pests;
 
-public class MaggotFlies {
+import java.time.LocalDate;
+
+public class MaggotFlies extends Pest{
+
+    public MaggotFlies(Integer levelOfInfestation, LocalDate dateOfInfestation) {
+        super(levelOfInfestation, dateOfInfestation);
+    }
 }
