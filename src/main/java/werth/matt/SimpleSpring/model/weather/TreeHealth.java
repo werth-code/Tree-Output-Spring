@@ -5,6 +5,5 @@ public enum TreeHealth {  //// TODO: 2/7/21 each weather or pest event should ta
     GOOD,
     FAIR,
     POOR,
-    DYING,
-    DEAD
+    DYING
 }
