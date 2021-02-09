@@ -24,7 +24,7 @@ public class TreeController {
     }
 
     @GetMapping("/trees/{id}")
-    public Tree getTreeByID(@PathVariable String id) {
+    public Tree getTreeByID(@PathVariable Long id) {
         return treeService.getTreeByID(id);
     }
 
@@ -34,12 +34,12 @@ public class TreeController {
     }
 
     @PutMapping("/trees/{id}")
-    public void updateTree(@RequestBody Tree tree, @PathVariable String id) {
+    public void updateTree(@RequestBody Tree tree, @PathVariable Long id) {
         treeService.updateTree(id, tree);
     }
 
     @DeleteMapping("/trees/{id}")
-    public void deleteTree(@PathVariable String id) {
+    public void deleteTree(@PathVariable Long id) {
         treeService.removeTree(id);
     }
 

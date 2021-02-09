@@ -11,6 +11,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TreeService {
@@ -31,7 +32,7 @@ public class TreeService {
         return trees;
     }
 
-    public Tree getTreeByID(String id) {
+    public Tree getTreeByID(Long id) {
        return treeRepository.findById(id).orElse(null);
     }
 
@@ -39,11 +40,13 @@ public class TreeService {
         treeRepository.save(tree);
     }
 
-    public void updateTree(String id, Tree tree) {
-        treeRepository.save(tree); //will replace if it has the same id!!!
+    public void updateTree(Long id, Tree tree) {
+        Optional<Tree> foundTree = Optional.ofNullable(getTreeByID(id));
+        tree.setId(foundTree.get().getId());
+        treeRepository.save(tree);
     }
 
-    public void removeTree(String id) {
+    public void removeTree(Long id) {
         treeRepository.deleteById(id);
     }
 }

@@ -5,6 +5,6 @@ import werth.matt.SimpleSpring.model.Tree;
 
 // Here we extend CrudRepository and pass in the Class Type(Tree) and the ID type(in this case String)
 //
-public interface TreeRepository extends CrudRepository<Tree, String> {
+public interface TreeRepository extends CrudRepository<Tree, Long> {
 
 }
