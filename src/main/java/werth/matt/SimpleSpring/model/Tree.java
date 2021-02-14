@@ -1,8 +1,5 @@
 package werth.matt.SimpleSpring.model;
 
-import werth.matt.SimpleSpring.model.weather.TreeHealth;
-import werth.matt.SimpleSpring.model.zones.PlantingZone;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +7,7 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 import java.util.UUID;
 
-
+//https://trefle.io/api/v1/plants?token=zbv6y3dV6flhDRn_vEuF41-gpYxrtYb6Za-1BaGq4nA&filter%5Bcommon_name%5D=apple
 //// TODO: 2/7/21 We may want to make this an abstract class and have tree types extend.
 
 @Entity //marks this as a JPA entity. creates a table for us..
@@ -19,12 +16,10 @@ public class Tree {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String location; //Correct: 41.40338, 2.17403.
-    private PlantingZone plantingZone; // auto look-up based on gps location of tree.
     private TreeType treeType;
     private LocalDate datePlanted;
     private Boolean requiresCrossPollination;
     private Double yearlyMaintenanceCost;
-    private TreeHealth treeHealth;
 
     // private Integer rangeOfCrossPollinator;
     // private Integer productionAge;
@@ -38,7 +33,6 @@ public class Tree {
         this.treeType = treeType;
         this.datePlanted = datePlanted;
         this.requiresCrossPollination = requiresPollination;
-        this.treeHealth = TreeHealth.HEALTHY;
     }
 
     public Long getId() {
@@ -87,22 +81,6 @@ public class Tree {
 
     public void setYearlyMaintenanceCost(Double yearlyMaintenanceCost) {
         this.yearlyMaintenanceCost = yearlyMaintenanceCost;
-    }
-
-    public TreeHealth getTreeHealth() {
-        return treeHealth;
-    }
-
-    public void setTreeHealth(TreeHealth treeHealth) {
-        this.treeHealth = treeHealth;
-    }
-
-    public PlantingZone getPlantingZone() {
-        return plantingZone;
-    }
-
-    public void setPlantingZone(PlantingZone plantingZone) {
-        this.plantingZone = plantingZone;
     }
 
     @Override
