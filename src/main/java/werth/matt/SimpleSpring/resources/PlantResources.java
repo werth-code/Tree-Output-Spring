@@ -2,11 +2,18 @@ package werth.matt.SimpleSpring.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.RequestEntity;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import werth.matt.SimpleSpring.model.Plant;
+import werth.matt.SimpleSpring.model.PlantData;
+import werth.matt.SimpleSpring.service.PlantService;
+
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/plantsearch")
@@ -19,20 +26,22 @@ public class PlantResources {
     private RestTemplate restTemplate;
 
     @RequestMapping("/{searchTerm}")
-    public Plant getPlantInfo(@PathVariable("searchTerm") String searchTerm) {
-       Plant plant = restTemplate.getForObject(
+    public PlantData getPlantInfo(@PathVariable("searchTerm") String searchTerm) {
+        PlantData plant = restTemplate.getForObject(
                 "https://trefle.io/api/v1/plants?token=" + apiKey + "&filter%5Bcommon_name%5D=" + searchTerm,
-                Plant.class
+                PlantData.class
         );
         return plant;
     }
 
 }
 
+
+
 // String name, String location, String plantType, LocalDate datePlanted
 
 //key
-//zbv6y3dV6flhDRn_vEuF41-gpYxrtYb6Za-1BaGq4nA
+//
 
 //search string
 //https://trefle.io/api/v1/plants?token=zbv6y3dV6flhDRn_vEuF41-gpYxrtYb6Za-1BaGq4nA&filter%5Bcommon_name%5D=fern

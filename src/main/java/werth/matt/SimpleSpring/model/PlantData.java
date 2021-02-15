@@ -1,6 +1,115 @@
 package werth.matt.SimpleSpring.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.hateoas.server.core.SpringAffordanceBuilder;
+
+@JsonIgnoreProperties
 public class PlantData {
+    private Long id;
+    private String commonName;
+    private String scientificName;
+    private Integer year;
+    private String bibliography;
+    private String familyCommonName;
+    private Integer genusId;
+    private String imageUrl;
+    private String[] synonyms;
+    private String genus;
+    private String family;
+
+    PlantData(){}
+
+    PlantData(String commonName) {
+        this.commonName = commonName;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCommonName() {
+        return commonName;
+    }
+
+    public void setCommonName(String commonName) {
+        this.commonName = commonName;
+    }
+
+    public String getScientificName() {
+        return scientificName;
+    }
+
+    public void setScientificName(String scientificName) {
+        this.scientificName = scientificName;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public String getBibliography() {
+        return bibliography;
+    }
+
+    public void setBibliography(String bibliography) {
+        this.bibliography = bibliography;
+    }
+
+    public String getFamilyCommonName() {
+        return familyCommonName;
+    }
+
+    public void setFamilyCommonName(String familyCommonName) {
+        this.familyCommonName = familyCommonName;
+    }
+
+    public Integer getGenusId() {
+        return genusId;
+    }
+
+    public void setGenusId(Integer genusId) {
+        this.genusId = genusId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String[] getSynonyms() {
+        return synonyms;
+    }
+
+    public void setSynonyms(String[] synonyms) {
+        this.synonyms = synonyms;
+    }
+
+    public String getGenus() {
+        return genus;
+    }
+
+    public void setGenus(String genus) {
+        this.genus = genus;
+    }
+
+    public String getFamily() {
+        return family;
+    }
+
+    public void setFamily(String family) {
+        this.family = family;
+    }
 }
 
 

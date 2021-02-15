@@ -11,7 +11,6 @@ import java.time.LocalDate;
         @Id // marks this as the primary key of the database..
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Long id;
-        private Integer year;
         private String name;
         private String location; //Correct: 41.40338, 2.17403.
         private String plantType;
@@ -67,11 +66,4 @@ import java.time.LocalDate;
             this.datePlanted = datePlanted;
         }
 
-        public Integer getYear() {
-            return year;
-        }
-
-        public void setYear(Integer year) {
-            this.year = year;
-        }
     }

@@ -1,7 +1,6 @@
 package werth.matt.SimpleSpring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import werth.matt.SimpleSpring.model.FruitTree;
 import werth.matt.SimpleSpring.model.Tree;
 import werth.matt.SimpleSpring.model.TreeType;
 import org.springframework.stereotype.Service;
@@ -18,13 +17,6 @@ public class TreeService {
 
     @Autowired // here when we create an instance of TreeService it is injected into TreeRepository.
     private TreeRepository treeRepository;
-
-    LocalDate localDate = LocalDate.of(2015, 3, 2);
-
-    private List<Tree> trees = new ArrayList<>(Arrays.asList(
-            new FruitTree("41.40338, 2.17403", TreeType.APPLE, LocalDate.of(2015, 3, 2), false),
-            new FruitTree("41.40338, 2.17403", TreeType.APPLE, LocalDate.of(2015, 3, 2), false)
-    ));
 
     public List<Tree> getTrees() {
         List<Tree> trees = new ArrayList<>();
