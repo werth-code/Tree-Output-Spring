@@ -15,7 +15,7 @@ public class TreeController {
 
     @GetMapping("/")
     public String landing() {
-        return "Hi";
+        return "This is a default for testing - mapping inside of TreeController";
     }
 
     @GetMapping("/trees")
