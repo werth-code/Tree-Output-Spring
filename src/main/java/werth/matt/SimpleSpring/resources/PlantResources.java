@@ -1,8 +1,11 @@
 package werth.matt.SimpleSpring.resources;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.RequestEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,13 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import werth.matt.SimpleSpring.model.Plant;
 import werth.matt.SimpleSpring.model.PlantData;
+import werth.matt.SimpleSpring.model.PlantDataRequest;
 import werth.matt.SimpleSpring.service.PlantService;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/plantsearch")
 public class PlantResources {
+
+    private static final Logger logger = LoggerFactory.getLogger(PlantResources.class);
 
     @Value("${api.key}")
     private String apiKey;
@@ -25,13 +33,15 @@ public class PlantResources {
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping("/{searchTerm}")
-    public PlantData getPlantInfo(@PathVariable("searchTerm") String searchTerm) {
-        PlantData plant = restTemplate.getForObject(
+    @GetMapping("/{searchTerm}")
+    public PlantData[] getPlantInfo(@PathVariable("searchTerm") String searchTerm) {
+        ResponseEntity<PlantDataRequest> plantEntity = restTemplate.getForEntity(
                 "https://trefle.io/api/v1/plants?token=" + apiKey + "&filter%5Bcommon_name%5D=" + searchTerm,
-                PlantData.class
+                PlantDataRequest.class
         );
-        return plant;
+        PlantData[] plantData = plantEntity.getBody().getData();
+        logger.info(plantData[0].toString());
+        return plantData;
     }
 
 }

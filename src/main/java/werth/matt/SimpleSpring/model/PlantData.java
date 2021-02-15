@@ -1,7 +1,9 @@
 package werth.matt.SimpleSpring.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.hateoas.server.core.SpringAffordanceBuilder;
+
+import java.io.Serializable;
+import java.util.Arrays;
 
 @JsonIgnoreProperties
 public class PlantData {
@@ -109,6 +111,23 @@ public class PlantData {
 
     public void setFamily(String family) {
         this.family = family;
+    }
+
+    @Override
+    public String toString() {
+        return "PlantData{" +
+                "id=" + id +
+                ", commonName='" + commonName + '\'' +
+                ", scientificName='" + scientificName + '\'' +
+                ", year=" + year +
+                ", bibliography='" + bibliography + '\'' +
+                ", familyCommonName='" + familyCommonName + '\'' +
+                ", genusId=" + genusId +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", synonyms=" + Arrays.toString(synonyms) +
+                ", genus='" + genus + '\'' +
+                ", family='" + family + '\'' +
+                '}';
     }
 }
 
