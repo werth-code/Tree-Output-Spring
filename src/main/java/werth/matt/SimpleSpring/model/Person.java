@@ -1,9 +1,8 @@
 package werth.matt.SimpleSpring.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @Entity
@@ -14,7 +13,8 @@ public class Person {
     private String firstName;
     private String lastName;
     private String email;
-    private PlantShelf plantShelf;
+    @ElementCollection
+    private Map<Long, Person> plantShelf;
 
     Person(){}
 
@@ -22,7 +22,7 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.plantShelf = new PlantShelf();
+        this.plantShelf = new HashMap<>();
     }
 
     public Long getId() {
@@ -57,11 +57,11 @@ public class Person {
         this.email = email;
     }
 
-    public PlantShelf getPlantShelf() {
+    public Map<Long, Person> getPlantShelf() {
         return plantShelf;
     }
 
-    public void setPlantShelf(PlantShelf plantShelf) {
+    public void setPlantShelf(Map<Long, Person> plantShelf) {
         this.plantShelf = plantShelf;
     }
 }
