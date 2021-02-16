@@ -2,28 +2,20 @@ package werth.matt.SimpleSpring.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.io.Serializable;
 import java.util.Arrays;
 
 @JsonIgnoreProperties
 public class PlantData {
     private Long id;
-    private String commonName;
-    private String scientificName;
-    private Integer year;
-    private String bibliography;
-    private String familyCommonName;
-    private Integer genusId;
-    private String imageUrl;
-    private String[] synonyms;
+    private String common_name;
+    private String scientific_name;
+    private String family_common_name;
+    private Integer genus_id;
+    private String image_url;
     private String genus;
     private String family;
 
     PlantData(){}
-
-    PlantData(String commonName) {
-        this.commonName = commonName;
-    }
 
     public Long getId() {
         return id;
@@ -33,69 +25,46 @@ public class PlantData {
         this.id = id;
     }
 
-    public String getCommonName() {
-        return commonName;
+    public String getCommon_name() {
+        return common_name;
     }
 
-    public void setCommonName(String commonName) {
-        this.commonName = commonName;
+    public void setCommon_name(String common_name) {
+        this.common_name = common_name;
     }
 
-    public String getScientificName() {
-        return scientificName;
+    public String getScientific_name() {
+        return scientific_name;
     }
 
-    public void setScientificName(String scientificName) {
-        this.scientificName = scientificName;
+    public void setScientific_name(String scientific_name) {
+        this.scientific_name = scientific_name;
     }
 
-    public Integer getYear() {
-        return year;
+    public String getFamily_common_name() {
+        return family_common_name;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setFamily_common_name(String family_common_name) {
+        this.family_common_name = family_common_name;
     }
 
-    public String getBibliography() {
-        return bibliography;
+    public Integer getGenus_id() {
+        return genus_id;
     }
 
-    public void setBibliography(String bibliography) {
-        this.bibliography = bibliography;
+    public void setGenus_id(Integer genus_id) {
+        this.genus_id = genus_id;
     }
 
-    public String getFamilyCommonName() {
-        return familyCommonName;
+    public String getImage_url() {
+        return image_url;
     }
 
-    public void setFamilyCommonName(String familyCommonName) {
-        this.familyCommonName = familyCommonName;
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 
-    public Integer getGenusId() {
-        return genusId;
-    }
-
-    public void setGenusId(Integer genusId) {
-        this.genusId = genusId;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public String[] getSynonyms() {
-        return synonyms;
-    }
-
-    public void setSynonyms(String[] synonyms) {
-        this.synonyms = synonyms;
-    }
 
     public String getGenus() {
         return genus;
@@ -117,14 +86,11 @@ public class PlantData {
     public String toString() {
         return "PlantData{" +
                 "id=" + id +
-                ", commonName='" + commonName + '\'' +
-                ", scientificName='" + scientificName + '\'' +
-                ", year=" + year +
-                ", bibliography='" + bibliography + '\'' +
-                ", familyCommonName='" + familyCommonName + '\'' +
-                ", genusId=" + genusId +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", synonyms=" + Arrays.toString(synonyms) +
+                ", common_name='" + common_name + '\'' +
+                ", scientific_name='" + scientific_name + '\'' +
+                ", family_common_name='" + family_common_name + '\'' +
+                ", genus_id=" + genus_id +
+                ", image_url='" + image_url + '\'' +
                 ", genus='" + genus + '\'' +
                 ", family='" + family + '\'' +
                 '}';

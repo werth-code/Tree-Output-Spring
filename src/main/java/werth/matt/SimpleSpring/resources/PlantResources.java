@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/plantsearch")
+@RequestMapping("/search")
 public class PlantResources {
 
     private static final Logger logger = LoggerFactory.getLogger(PlantResources.class);
@@ -34,13 +34,14 @@ public class PlantResources {
     private RestTemplate restTemplate;
 
     @GetMapping("/{searchTerm}")
-    public PlantData[] getPlantInfo(@PathVariable("searchTerm") String searchTerm) {
-        ResponseEntity<PlantDataRequest> plantEntity = restTemplate.getForEntity(
-                "https://trefle.io/api/v1/plants?token=" + apiKey + "&filter%5Bcommon_name%5D=" + searchTerm,
-                PlantDataRequest.class
-        );
+    public PlantData[] getPlantInfo(@PathVariable String searchTerm) {
+
+        String url =  "https://trefle.io/api/v1/plants/search?token=" + apiKey + "&q=" + searchTerm;
+        ResponseEntity<PlantDataRequest> plantEntity = restTemplate.getForEntity(url, PlantDataRequest.class);
+
         PlantData[] plantData = plantEntity.getBody().getData();
         logger.info(plantData[0].toString());
+        logger.info(url);
         return plantData;
     }
 
@@ -49,9 +50,6 @@ public class PlantResources {
 
 
 // String name, String location, String plantType, LocalDate datePlanted
-
-//key
-//
 
 //search string
 //https://trefle.io/api/v1/plants?token=zbv6y3dV6flhDRn_vEuF41-gpYxrtYb6Za-1BaGq4nA&filter%5Bcommon_name%5D=fern
