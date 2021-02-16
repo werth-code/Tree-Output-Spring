@@ -14,7 +14,7 @@ public class Person {
     private String lastName;
     private String email;
     @ElementCollection
-    private Map<Long, Person> plantShelf;
+    private Map<Long, Plant> plantShelf;
 
     Person(){}
 
@@ -57,11 +57,11 @@ public class Person {
         this.email = email;
     }
 
-    public Map<Long, Person> getPlantShelf() {
+    public Map<Long, Plant> getPlantShelf() {
         return plantShelf;
     }
 
-    public void setPlantShelf(Map<Long, Person> plantShelf) {
+    public void setPlantShelf(Map<Long, Plant> plantShelf) {
         this.plantShelf = plantShelf;
     }
 }

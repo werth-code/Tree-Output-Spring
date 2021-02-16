@@ -8,9 +8,11 @@ import static org.junit.Assert.*;
 
 public class PersonTest {
     Person person;
+    Plant plant;
 
     @Before
     public void setUp() throws Exception {
+        plant = new Plant();
         person = new Person("Matt", "Werth", "matthewwerth@gmail.com");
     }
 
@@ -57,9 +59,9 @@ public class PersonTest {
 
     @Test
     public void getPlantShelf() {
-        person.getPlantShelf().put(1L, person);
-        String actual = person.getPlantShelf().get(1L).getFirstName();
-        String expected = "Matt";
+        person.getPlantShelf().put(1L, plant);
+        String actual = person.getPlantShelf().get(1L).toString();
+        String expected = plant.toString();
 
         System.out.println(actual);
         Assert.assertEquals(actual, expected);
