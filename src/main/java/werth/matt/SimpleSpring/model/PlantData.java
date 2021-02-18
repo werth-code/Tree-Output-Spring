@@ -2,10 +2,13 @@ package werth.matt.SimpleSpring.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.Arrays;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 @JsonIgnoreProperties
 public class PlantData {
+    @Id
     private Long id;
     private String common_name;
     private String scientific_name;

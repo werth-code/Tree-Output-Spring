@@ -28,6 +28,11 @@ public class PersonController {
         personService.addPerson(person);
     }
 
+//    @PostMapping("/users/{id}/{plantId}")
+//    public void addPlantToShelf(@RequestBody Person person) {
+//        personService.addPerson(person);
+//    }
+
     @PutMapping("/users/{id}")
     public void updatePerson(@RequestBody Person person, @PathVariable Long id) {
         personService.updatePerson(id, person);

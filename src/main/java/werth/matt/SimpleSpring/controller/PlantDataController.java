@@ -3,40 +3,41 @@ package werth.matt.SimpleSpring.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import werth.matt.SimpleSpring.model.Plant;
+import werth.matt.SimpleSpring.model.PlantData;
+import werth.matt.SimpleSpring.service.PlantDataService;
 import werth.matt.SimpleSpring.service.PlantService;
-
 
 import java.util.List;
 
+
 @CrossOrigin
 @RestController
-public class PlantController {
-
+public class PlantDataController {
     @Autowired
-    private PlantService plantService; //for dependency injection
+    private PlantDataService plantService; //for dependency injection
 
-    @GetMapping("/plants")
-    public List<Plant> getPlants() {
+    @GetMapping("/plant")
+    public List<PlantData> getPlants() {
         return plantService.getPlants();
     }
 
-    @GetMapping("/plants/{id}")
-    public Plant getPlantByID(@PathVariable Long id) {
+    @GetMapping("/plant/{id}")
+    public PlantData getPlantByID(@PathVariable Long id) {
         return plantService.getPlantByID(id);
     }
 
     @CrossOrigin
-    @PostMapping("/plants")
-    public void addPlant(@RequestBody Plant plant) {
+    @PostMapping("/plant")
+    public void addPlant(@RequestBody PlantData plant) {
         plantService.addPlant(plant);
     }
 
-    @PutMapping("/plants/{id}")
-    public void updatePlant(@RequestBody Plant plant, @PathVariable Long id) {
+    @PutMapping("/plant/{id}")
+    public void updatePlant(@RequestBody PlantData plant, @PathVariable Long id) {
         plantService.updatePlant(id, plant);
     }
 
-    @DeleteMapping("/plants/{id}")
+    @DeleteMapping("/plant/{id}")
     public void deletePlant(@PathVariable Long id) {
         plantService.removePlant(id);
     }

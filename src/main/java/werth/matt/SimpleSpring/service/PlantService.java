@@ -16,13 +16,6 @@ public class PlantService {
     @Autowired // here when we create an instance of TreeService it is injected into TreeRepository.
     private PlantRepository plantRepository;
 
-        LocalDate localDate = LocalDate.of(2015, 3, 2);
-
-        private List<Plant> plants = new ArrayList<>(Arrays.asList(
-                new Plant("Teddy", "41.40338, 2.17403",  "Cactus", LocalDate.of(2015, 3, 2)),
-                new Plant("Martha", "41.40338, 2.17403", "Tree",  LocalDate.of(2015, 3, 2))
-        ));
-
         public List<Plant> getPlants() {
             List<Plant> plants = new ArrayList<>();
             plantRepository.findAll().forEach(plants::add);
