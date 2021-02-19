@@ -1,10 +1,12 @@
 package werth.matt.SimpleSpring.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@JsonAutoDetect
 @Entity
 @JsonIgnoreProperties
 public class PlantData {
@@ -18,7 +20,7 @@ public class PlantData {
     private String genus;
     private String family;
 
-    PlantData(){}
+    public PlantData(){}
 
     public Long getId() {
         return id;

@@ -15,7 +15,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/search")
 public class PlantResources {
@@ -28,7 +28,7 @@ public class PlantResources {
     @Autowired
     private RestTemplate restTemplate;
 
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{searchTerm}")
     public PlantData[] getPlantInfo(@PathVariable String searchTerm) {
 
@@ -37,9 +37,8 @@ public class PlantResources {
 
         PlantData[] plantData = plantEntity.getBody().getData();
 
-        System.out.println(plantData[0].getId());
-        System.out.println(url);
-        return Arrays.copyOfRange(plantData, 0, 5); //limit to first 5 results..
+        if(plantData.length > 0) return Arrays.copyOfRange(plantData, 0, 5); //limit to first 5 results..
+        else return new PlantData[0];
     }
 
     @CrossOrigin
@@ -54,9 +53,8 @@ public class PlantResources {
 
         PlantData[] plantData = plantEntity.getBody().getData();
 
-        System.out.println(plantData[0].toString());
-        System.out.println(url);
-        return plantData[0];
+        if(plantData[0] != null) return plantData[0];
+        else return new PlantData();
     }
 
     private String encodeValue(String value) throws UnsupportedEncodingException {

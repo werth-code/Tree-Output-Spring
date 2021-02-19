@@ -10,7 +10,7 @@ import werth.matt.SimpleSpring.service.PlantService;
 import java.util.List;
 
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class PlantDataController {
     @Autowired
@@ -26,7 +26,7 @@ public class PlantDataController {
         return plantService.getPlantByID(id);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/plant")
     public void addPlant(@RequestBody PlantData plant) {
         plantService.addPlant(plant);
